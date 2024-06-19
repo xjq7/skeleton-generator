@@ -12,7 +12,6 @@ export default function Component() {
         const { key, path } = route;
 
         if (path === '/') return null;
-
         return (
           <div
             className={S.item}
