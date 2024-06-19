@@ -10,7 +10,6 @@ export default function Component() {
     <div className={S.container}>
       {routes.map((route) => {
         const { key, path } = route;
-
         if (path === '/') return null;
         return (
           <div
