@@ -1,0 +1,39 @@
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: path.resolve(__dirname, 'index.tsx'),
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].js',
+  },
+  devtool: false,
+  devServer: {
+    port: 8080,
+    historyApiFallback: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+          },
+        },
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.less$/i,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader', 'less-loader'],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.CleanPlugin(), new HtmlWebpackPlugin()],
+};

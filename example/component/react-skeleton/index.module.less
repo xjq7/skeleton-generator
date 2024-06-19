@@ -1,0 +1,25 @@
+.container {
+  .pos {
+    position: absolute;
+    margin: 5px 0;
+    background: linear-gradient(
+      90deg,
+      hsla(0deg, 0%, 74.5%, 0.2) 25%,
+      hsla(0deg, 0%, 50.6%, 0.24) 37%,
+      hsla(0deg, 0%, 74.5%, 0.2) 63%
+    );
+    background-size: 400% 100%;
+    border-radius: 2px;
+    animation: skeleton-loading 1.4s ease infinite;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
