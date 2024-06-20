@@ -49,14 +49,14 @@ jobs:
         run: pnpm i
 
       - name: Build
-        run: pnpm run build-example
+        run: pnpm --filter example run build
 
       # 推到服务器
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.2.1
         with:
           switches: -avzr --delete
-          path: ./example/dist
+          path: ./packages/example/dist
           remote_path: /root/project/skeleton/
           remote_host: ${{ secrets.SSH_HOST }}
           remote_port: ${{ secrets.SSH_PORT }}

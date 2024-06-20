@@ -1,13 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
-    popup: './pages/popup/index.tsx',
-    background: './scripts/background.ts',
-    content: './scripts/content.ts',
+    popup: './src/popup/index.tsx',
+    background: './src/background.ts',
+    content: './src/content.ts',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

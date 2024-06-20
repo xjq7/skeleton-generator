@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Input, Form, InputNumber } from 'antd';
-import * as storage from '../../utils/storage';
+import * as storage from '../storage';
 import S from './index.module.less';
 
 const config = storage.get('config') || {

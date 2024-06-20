@@ -4,11 +4,6 @@ chrome.runtime.onInstalled.addListener(function () {
     id: 'preview',
     contexts: ['all'],
   });
-  // chrome.contextMenus.create({
-  //   title: '下载组件',
-  //   id: 'download',
-  //   contexts: ['all'],
-  // });
   chrome.contextMenus.create({
     title: '复制数据',
     id: 'copy',

@@ -1,19 +1,27 @@
 # 骨架屏生成插件
 
-[技术文档](http://wiki.tuzhanai.com/pages/viewpage.action?pageId=579287285)
+## 示例
+
+一个 带有骨架屏效果的 example 页
+
+https://sg.xjq.icu
 
 ## 开发
 
 - 依赖安装
 
+  根目录下安装依赖
+
   ```sh
   pnpm i
   ```
 
+### chrome 插件开发
+
 - 本地开发
 
   ```sh
-  pnpm dev
+  pnpm --filter extension run dev
   ```
 
   代码变更重新构建之后需要在 插件页(chrome://extensions/) 刷新下指定插件
@@ -23,7 +31,7 @@
 - 打包构建
 
   ```sh
-  pnpm build
+  pnpm --filter extension run build
   ```
 
 ## 使用

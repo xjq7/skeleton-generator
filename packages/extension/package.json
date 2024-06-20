@@ -1,0 +1,19 @@
+{
+  "name": "@sg/extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "crx": "^5.0.1"
+  },
+  "dependencies": {
+    "@sg/gen": "workspace:^1.0.0"
+  }
+}
