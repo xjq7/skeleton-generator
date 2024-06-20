@@ -34,20 +34,30 @@ https://sg.xjq.icu
   pnpm --filter extension run build
   ```
 
-## 使用
+### 核心生成包 gen
 
-配置面板可修改 骨架屏节点和骨架屏预览时长
+- 开发
 
-通过 预览可查看当前骨架屏效果
+  ```sh
+  pnpm --filter gen run dev
+  ```
 
-效果 ok 的话 通过复制数据获取 骨架屏节点数据, 然后结合 common 包的 Skeleton 组件 绘制完整的骨架屏
+- 打包
 
-## 调试页面
+  ```sh
+  pnpm --filter gen run build
+  ```
 
-用来启动一些测试页面, 来调试骨架屏组件生成效果
+### example demo
 
-- 启动
+- 开发
 
-```sh
-pnpm dev-example
-```
+  ```sh
+  pnpm --filter example run dev
+  ```
+
+- 打包
+
+  ```sh
+  pnpm --filter example run build
+  ```
