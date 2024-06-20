@@ -1,5 +1,5 @@
 {
-  "name": "@sg/extension",
+  "name": "@skgen/extension",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -14,6 +14,6 @@
     "crx": "^5.0.1"
   },
   "dependencies": {
-    "@sg/gen": "workspace:^1.0.0"
+    "@skgen/gen": "workspace:^1.0.0"
   }
 }

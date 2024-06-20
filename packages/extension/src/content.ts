@@ -1,4 +1,4 @@
-import { preview, generate } from '@sg/gen';
+import { preview, generate } from '@skgen/gen';
 import { copy } from './utils';
 import { getConfig, getSelector } from './config';
 

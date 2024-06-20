@@ -24,6 +24,12 @@ const data = [
     favorite: 'play',
     avatar: 'https://image.xjq.icu/2024/6/19/1718771694621_portrait-6064965_640.jpg',
   },
+
+  {
+    name: 'xjq2',
+    favorite: 'play',
+    avatar: 'https://image.xjq.icu/2024/6/19/1718771694621_portrait-6064965_640.jpg',
+  },
 ];
 
 /**
@@ -41,8 +47,8 @@ export default function Component() {
 
   return (
     <div className={S.container}>
-      <Skeleton data={skeletonSource} loading={loading}>
-        <div className={S.content}>
+      <div className={S.content}>
+        <Skeleton data={skeletonSource} loading={loading}>
           {data.map((o, index) => {
             const { name, favorite, avatar } = o;
             return (
@@ -53,8 +59,8 @@ export default function Component() {
               </div>
             );
           })}
-        </div>
-      </Skeleton>
+        </Skeleton>
+      </div>
     </div>
   );
 }

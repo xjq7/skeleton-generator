@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "preinstall": "npx -y only-allow pnpm"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:xjq7/skeleton-generator.git"
@@ -38,7 +36,8 @@
     "typescript": "^5.3.3",
     "webpack": "^5.89.0",
     "webpack-bundle-analyzer": "^4.10.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
     "antd": "^5.15.4"
