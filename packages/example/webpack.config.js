@@ -39,5 +39,11 @@ module.exports = {
       '@components': path.resolve(__dirname, './components'),
     },
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.CleanPlugin(), new HtmlWebpackPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.CleanPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'index.html'),
+    }),
+  ],
 };

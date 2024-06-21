@@ -1,0 +1,16 @@
+{
+  "name": "toolkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve --mode=development --config=webpack.config.js",
+    "build": "webpack --mode=production --config=webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@skgen/gen": "workspace:^1.0.0"
+  }
+}
