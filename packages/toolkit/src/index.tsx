@@ -34,7 +34,7 @@ export default function App() {
     };
 
     const { selector } = config;
-    const data = generate(selector);
+    const data = generate(document.querySelector(selector));
     copy(JSON.stringify(data));
   };
   const handlePreview = () => {
@@ -44,7 +44,7 @@ export default function App() {
     };
 
     const { selector, previewTime } = config;
-    preview(selector, previewTime);
+    preview(document.querySelector(selector), previewTime);
   };
   const openSetting = () => {
     setSettingOpen(true);
