@@ -8,12 +8,12 @@ on:
   push:
     branches: [main]
     paths:
-      - './packages/example/**'
+      - 'packages/example/**'
       - '.github/workflows/example.yml'
   pull_request:
     branches: [main]
     paths:
-      - 'example/**'
+      - 'packages/example/**'
       - '.github/workflows/example.yml'
 
   # Allows you to run this workflow manually from the Actions tab

@@ -7,7 +7,7 @@ export const routes = [
   {
     path: '/',
     key: '首页',
-    element: <Home></Home>,
+    element: <Home />,
   },
   {
     path: 'user-info',
