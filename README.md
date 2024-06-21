@@ -40,7 +40,44 @@ chrome 浏览器中进入 chrome://extensions/
 
 点击复制获取骨架数据
 
-### debug 控制台(待开发)
+### debug 控制台
+
+在 html 文件 head 标签中添加 script
+
+如下:
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skeleton-generator example</title>
+    <!-- 直接加载 skgen.toolkit.js 文件 -->
+    <script src="https://image.xjq.icu/2024/6/22/1718990007203_skgen.toolkit.js" defer></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+在页面右下角自动加载 toolkit 按钮
+
+![](https://image.xjq.icu/2024/6/22/1718993819878_image.png)
+
+按钮功能介绍
+
+![](https://image.xjq.icu/2024/6/22/1718993922398_image-1.png)
+
+找到需要生成的组件容器
+
+![](https://image.xjq.icu/2024/6/21/1718956638607_image-3.png)
+
+设置面板输入容器选择器
+
+![](https://image.xjq.icu/2024/6/22/1718994007273_image-2.png)
+
+随后点击预览查看效果
 
 ## 开发
 
