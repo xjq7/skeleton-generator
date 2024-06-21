@@ -10,7 +10,7 @@ https://sg.xjq.icu
 
 ### chrome 插件
 
-下载 [skeleton-generator.rar](https://image.xjq.icu/2024/6/21/1718956891159_skeleton-generator.rar) 并解压
+下载 [skeleton-generator.zip](https://image.xjq.icu/2024/6/22/1718985688098_skeleton-generator.zip) 并解压
 
 chrome 浏览器中进入 chrome://extensions/
 
