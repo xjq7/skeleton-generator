@@ -6,6 +6,7 @@ interface SkeletonProps {
   data: IPos[];
   loading?: boolean;
   children?: ReactNode;
+  className?: string;
 }
 
 interface IPos {
@@ -47,12 +48,12 @@ function Pos(props: IPos) {
  * @return {*}
  */
 function Skeleton(props: SkeletonProps) {
-  const { loading, data, style, children } = props;
+  const { loading, data, style, className, children } = props;
 
-  if (!loading) return children;
+  if (!loading) return <div className={className}>{children}</div>;
 
   return (
-    <div className={S.container} style={style}>
+    <div className={className} style={{ ...style, position: 'relative' }}>
       {data.map((pos) => (
         <Pos {...pos} />
       ))}

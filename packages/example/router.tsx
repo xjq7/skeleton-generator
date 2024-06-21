@@ -4,12 +4,18 @@ import BorderRadius from './border-radius';
 import Home from './home';
 import Overlap from './overlap';
 import Weight from './weight';
+import UserInfo from './user-info';
 
 export const routes = [
   {
     path: '/',
     key: '首页',
     element: <Home></Home>,
+  },
+  {
+    path: 'user-info',
+    key: '用户信息',
+    element: <UserInfo />,
   },
   {
     path: '/border-radius',

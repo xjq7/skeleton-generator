@@ -8,7 +8,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'example/**'
+      - './packages/example/**'
       - '.github/workflows/example.yml'
   pull_request:
     branches: [main]

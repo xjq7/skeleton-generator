@@ -8,6 +8,8 @@ export default function Component() {
 
   return (
     <div className={S.container}>
+      <div className={S.title}>骨架屏效果展示 demo</div>
+
       {routes.map((route) => {
         const { key, path } = route;
         if (path === '/') return null;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Card } from 'antd';
 import Skeleton from '@components/react-skeleton';
 import skeletonSource from './skeletonSource.json';
 import S from './index.module.less';
@@ -47,8 +48,8 @@ export default function Component() {
 
   return (
     <div className={S.container}>
-      <div className={S.content}>
-        <Skeleton data={skeletonSource} loading={loading}>
+      <Card title="用户列表">
+        <Skeleton data={skeletonSource} loading={loading} className={S.content}>
           {data.map((o, index) => {
             const { name, favorite, avatar } = o;
             return (
@@ -60,7 +61,7 @@ export default function Component() {
             );
           })}
         </Skeleton>
-      </div>
+      </Card>
     </div>
   );
 }

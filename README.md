@@ -18,6 +18,12 @@ https://sg.xjq.icu
 
 ### chrome 插件开发
 
+- 先构建 gen 包
+
+  ```sh
+  pnpm --filter gen run dev
+  ```
+
 - 本地开发
 
   ```sh
