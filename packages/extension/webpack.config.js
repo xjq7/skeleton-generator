@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
@@ -38,6 +39,9 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.CleanPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'public' }],
+    }),
     // new BundleAnalyzerPlugin(),
   ],
 };
