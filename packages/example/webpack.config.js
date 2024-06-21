@@ -31,7 +31,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'less-loader'],
       },
     ],
-  },
+  }, 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     alias: {
