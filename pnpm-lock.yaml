@@ -88,7 +88,11 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4(webpack-cli@5.1.4)(webpack@5.89.0)
 
-  packages/example: {}
+  packages/example:
+    dependencies:
+      '@skgen/gen':
+        specifier: workspace:^1.0.0
+        version: link:../gen
 
   packages/extension:
     dependencies:

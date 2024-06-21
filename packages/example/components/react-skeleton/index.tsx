@@ -3,7 +3,7 @@ import S from './index.module.less';
 
 interface SkeletonProps {
   style?: React.CSSProperties;
-  data: IPos[];
+  data: { container: { x?: number; y?: number; w?: number; h?: number }; children: IPos[] };
   loading?: boolean;
   children?: ReactNode;
   className?: string;
@@ -50,11 +50,14 @@ function Pos(props: IPos) {
 function Skeleton(props: SkeletonProps) {
   const { loading, data, style, className, children } = props;
 
-  if (!loading) return <div className={className}>{children}</div>;
+  if (!loading) return children;
+
+  const { children: poss, container } = data;
+  const { w, h } = container;
 
   return (
-    <div className={className} style={{ ...style, position: 'relative' }}>
-      {data.map((pos) => (
+    <div className={className} style={{ position: 'relative', width: w, height: h, ...style }}>
+      {poss.map((pos) => (
         <Pos {...pos} />
       ))}
     </div>

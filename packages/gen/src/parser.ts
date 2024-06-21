@@ -1,16 +1,19 @@
+import { SkeletonNode } from './type';
+
 /**
  * 从 container 节点获取它下面的骨架屏 数据
  * @param {*}
  * @returns
  */
 export function parse(containerEl: Element | null) {
-  if (!containerEl) return [];
+  if (!containerEl) return { container: {}, children: [] as SkeletonNode[] };
   const { children } = containerEl;
+
   const stack = Array.from(children);
   const nodes = [];
 
   const rect = containerEl.getBoundingClientRect();
-  const { x: px, y: py } = rect;
+  const { x: px, y: py, width, height } = rect;
 
   let borderRadius = '';
 
@@ -67,5 +70,13 @@ export function parse(containerEl: Element | null) {
       borderRadius = '';
     }
   }
-  return nodes;
+  return {
+    container: {
+      w: width,
+      h: height,
+      x: px,
+      y: py,
+    },
+    children: nodes,
+  };
 }

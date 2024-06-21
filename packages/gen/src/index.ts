@@ -1,13 +1,13 @@
 import { parse } from './parser';
 import { mergeHighOverlapNodes, mergePosition, weightNode } from './toolkit';
-import { SkeletonNode } from './type';
+import { SkeletonNode, SkeletonSource } from './type';
 
 /**
  * 用于创建预览骨架屏 dom 节点
  * @param {*} sks
  * @returns
  */
-function createSkeleton(sks: SkeletonNode[]) {
+function createSkeleton(data: SkeletonSource) {
   const skeletonStyle = `
   .animated {
     animation: skeleton-loading 1.4s ease infinite;
@@ -24,7 +24,6 @@ function createSkeleton(sks: SkeletonNode[]) {
   }
   
   .skeleton {
-    margin: 5px 0;
     background: linear-gradient(
       90deg,
       hsla(0, 0%, 74.5%, 0.2) 25%,
@@ -32,13 +31,13 @@ function createSkeleton(sks: SkeletonNode[]) {
       hsla(0, 0%, 74.5%, 0.2) 63%
     );
     background-size: 400% 100%;
-    border-radius: 2px;
     position: absolute;
-    z-index: 999999;
   }
   `;
 
-  const skeletonEl = sks.reduce((acc, cur) => {
+  const { children, container } = data;
+
+  const skeletonEl = children.reduce((acc, cur) => {
     return (
       acc +
       `<div class="skeleton animated" style="opacity: ${cur.wg};top: ${cur.y}px; left: ${cur.x}px; width: ${
@@ -52,7 +51,14 @@ function createSkeleton(sks: SkeletonNode[]) {
   ${skeletonEl}
   `;
 
-  return skeletonDom;
+  const previewDom = document.createElement('div');
+  const { x, y, w, h } = container;
+  previewDom.setAttribute(
+    'style',
+    `position:absolute;width:${w}px;height:${h}px;left:${x}px;top:${y}px;z-index:999999;`
+  );
+  previewDom.innerHTML = `${skeletonDom}`;
+  return previewDom;
 }
 
 /**
@@ -64,19 +70,10 @@ export async function preview(el: Element, time: number = 5) {
     console.error('节点不存在');
     return;
   }
-  const sks = await generate(el);
-  const skeletonDom = createSkeleton(sks);
-  const rect = el.getBoundingClientRect();
-  const { x, y, width, height } = rect;
-
+  const skeletonSource = await generate(el);
+  const skeletonDom = createSkeleton(skeletonSource);
   // 创建一个预览容器大小位置跟 container 保持一致
-  const previewDom = document.createElement('div');
-  previewDom.setAttribute(
-    'style',
-    `position:absolute;width:${width}px;height:${height}px;left:${x}px;top:${y}px;z-index:999999999;overflow:hidden;`
-  );
-  previewDom.innerHTML = skeletonDom;
-  document.body.appendChild(previewDom);
+  document.body.appendChild(skeletonDom);
 
   // 将 container 容器透明度降到 0
   const containerStyle = window.getComputedStyle(el);
@@ -86,7 +83,7 @@ export async function preview(el: Element, time: number = 5) {
   // 还原回来
   setTimeout(
     () => {
-      document.body.removeChild(previewDom);
+      document.body.removeChild(skeletonDom);
       (el as HTMLElement).style.opacity = opacity;
     },
     Number(time) * 1000
@@ -100,11 +97,11 @@ export async function preview(el: Element, time: number = 5) {
  * @return {*}
  */
 export async function generate(dom: Element) {
-  let nodes: SkeletonNode[] = parse(dom);
+  let { container, children: nodes } = parse(dom);
 
   nodes = mergePosition(nodes);
   nodes = mergeHighOverlapNodes(nodes);
   nodes = weightNode(nodes);
 
-  return nodes;
+  return { container, children: nodes };
 }

@@ -1,30 +1,28 @@
 import React from 'react';
+import { Card, List } from 'antd';
+import { Link } from 'react-router-dom';
+
 import { routes } from '../router';
 import S from './index.module.less';
-import { useNavigate } from 'react-router-dom';
 
 export default function Component() {
-  const navigate = useNavigate();
-
   return (
     <div className={S.container}>
       <div className={S.title}>骨架屏效果展示 demo</div>
 
-      {routes.map((route) => {
-        const { key, path } = route;
-        if (path === '/') return null;
-        return (
-          <div
-            className={S.item}
-            key={key}
-            onClick={() => {
-              navigate(path, {});
-            }}
-          >
-            {key}
-          </div>
-        );
-      })}
+      <List
+        grid={{ gutter: 16, column: 4 }}
+        dataSource={routes.filter((o) => o.path !== '/')}
+        renderItem={(item) => (
+          <List.Item>
+            <Card title={item.key} style={{ margin: 20 }}>
+              <Link to={item.path} target="_blank">
+                点击前往
+              </Link>
+            </Card>
+          </List.Item>
+        )}
+      />
     </div>
   );
 }
