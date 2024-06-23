@@ -140,3 +140,7 @@ chrome 浏览器中进入 chrome://extensions/
   ```sh
   pnpm --filter example run build
   ```
+
+## ❤️ Sponsors
+
+- [lexmin0412](https://github.com/lexmin0412)
