@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
-    "antd": "^5.15.4"
+    "antd": "^5.15.4",
+    "classnames": "^2.5.1"
   }
 }
