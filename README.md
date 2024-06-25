@@ -2,9 +2,15 @@
 
 ## 示例
 
-一个 带有骨架屏效果的 example 页
+- 官方 Example 示例项目
 
-https://sg.xjq.icu
+  一个 带有骨架屏效果的 example 页
+
+  https://sg.xjq.icu
+
+- 掘金首页列表示例
+
+  ![](https://image.xjq.icu/2024/6/24/1719211983658_image.png)
 
 ## 使用
 
