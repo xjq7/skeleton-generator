@@ -15,7 +15,7 @@ export default function Component() {
         dataSource={routes.filter((o) => o.path !== '/')}
         renderItem={(item) => (
           <List.Item>
-            <Card title={item.key} style={{ margin: 20 }}>
+            <Card title={item.key} style={{ width: 180, margin: 20 }}>
               <Link to={item.path} target="_blank">
                 点击前往
               </Link>
