@@ -65,12 +65,12 @@ function createSkeleton(data: SkeletonSource) {
  * 预览
  * @param {*} sks
  */
-export async function preview(el: Element, time: number = 5) {
+export function preview(el: Element, time: number = 5) {
   if (!el) {
     console.error('节点不存在');
     return;
   }
-  const skeletonSource = await generate(el);
+  const skeletonSource = generate(el);
   const skeletonDom = createSkeleton(skeletonSource);
   // 创建一个预览容器大小位置跟 container 保持一致
   document.body.appendChild(skeletonDom);
@@ -96,7 +96,7 @@ export async function preview(el: Element, time: number = 5) {
  * @export
  * @return {*}
  */
-export async function generate(dom: Element) {
+export function generate(dom: Element) {
   let { container, children: nodes } = parse(dom);
 
   nodes = mergePosition(nodes);

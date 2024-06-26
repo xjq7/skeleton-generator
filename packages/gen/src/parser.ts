@@ -13,7 +13,11 @@ export function parse(containerEl: Element | null) {
   const nodes = [];
 
   const rect = containerEl.getBoundingClientRect();
-  const { x: px, y: py, width, height } = rect;
+  let { x: px, y: py, width, height } = rect;
+  px = Math.floor(px);
+  py = Math.floor(py);
+  width = Math.floor(width);
+  height = Math.floor(height);
 
   let borderRadius = '';
 

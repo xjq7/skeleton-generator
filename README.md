@@ -59,7 +59,7 @@ chrome 浏览器中进入 chrome://extensions/
     <meta charset="UTF-8" />
     <title>Skeleton-generator example</title>
     <!-- 直接加载 skgen.toolkit.js 文件 -->
-    <script src="https://image.xjq.icu/2024/6/22/1718990007203_skgen.toolkit.js" defer></script>
+    <script src="https://image.xjq.icu/skgen.toolkit.js" defer></script>
   </head>
   <body>
     <div id="root"></div>
