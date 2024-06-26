@@ -2,7 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Home from './home';
 import UserInfo from './user-info';
-import List from './juejin'
+import Juejin from './juejin';
 
 export const routes = [
   {
@@ -16,10 +16,10 @@ export const routes = [
     element: <UserInfo />,
   },
   {
-    path: 'list',
-    key: '列表',
-    element: <List />
-  }
+    path: 'juejin',
+    key: '掘金社区',
+    element: <Juejin />,
+  },
 ];
 
 const router = createBrowserRouter(routes);

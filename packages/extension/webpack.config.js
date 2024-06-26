@@ -37,7 +37,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.CleanPlugin(),
     new CopyPlugin({
       patterns: [{ from: 'public' }],

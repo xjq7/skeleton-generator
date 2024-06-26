@@ -110,5 +110,5 @@
       "@components*": ["./components/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "lib.d.ts"]
 }

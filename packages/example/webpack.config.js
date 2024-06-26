@@ -51,7 +51,6 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.CleanPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'index.html'),
