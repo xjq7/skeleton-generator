@@ -30,6 +30,17 @@ module.exports = {
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'less-loader'],
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true,
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
