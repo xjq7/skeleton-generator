@@ -27,8 +27,8 @@ export default function Setting(props: Props) {
           storage.set('config', values);
         }}
       >
-        <Form.Item name="selector" label="选择器(多个时默认选第一个)">
-          <Input style={{ width: 200 }} placeholder="请输入选择器" />
+        <Form.Item name="selector" label="选择器">
+          <Input placeholder="请输入选择器" />
         </Form.Item>
         <Form.Item name="previewTime" label="骨架屏预览时长(s)">
           <InputNumber placeholder="请输入骨架屏预览时长" />

@@ -5,16 +5,19 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --mode=development --config=webpack.config.js",
-    "build": "webpack --mode=production --config=webpack.config.js"
+    "build": "webpack --mode=production --config=webpack.config.js",
+    "tz:build": "cross-env cenv=tz webpack --mode=production --config=webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ant-design/cssinjs": "^1.21.0",
     "@skgen/gen": "workspace:^1.0.0"
   },
   "devDependencies": {
     "postcss": "^8.4.38",
-    "postcss-loader": "^8.1.1"
+    "postcss-loader": "^8.1.1",
+    "postcss-pxtorem": "^6.1.0"
   }
 }

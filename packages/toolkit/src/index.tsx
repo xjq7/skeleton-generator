@@ -4,6 +4,23 @@ import { SettingOutlined, CopyOutlined, AppstoreOutlined, EyeOutlined } from '@a
 import { preview, generate } from '@skgen/gen';
 import Setting from './setting';
 import * as storage from './storage';
+import { px2remTransformer, StyleProvider } from '@ant-design/cssinjs';
+
+const px2rem = px2remTransformer({
+  rootValue: 8,
+});
+
+function toRem(Component: () => React.JSX.Element) {
+  return () => {
+    // return (
+    //   <StyleProvider transformers={[px2rem]}>
+    //     <Component />
+    //   </StyleProvider>
+    // );
+
+    return <Component />;
+  };
+}
 
 /**
  * 文本复制方法
@@ -24,7 +41,7 @@ function copy(text: string) {
   }
 }
 
-export default function App() {
+function App() {
   const [settingOpen, setSettingOpen] = useState(false);
 
   const handleCopy = () => {
@@ -66,3 +83,5 @@ export default function App() {
     </div>
   );
 }
+
+export default toRem(App);
